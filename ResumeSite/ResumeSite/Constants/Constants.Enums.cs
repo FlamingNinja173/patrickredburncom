@@ -1,4 +1,4 @@
-﻿namespace ResumeSite.Constants
+﻿namespace ResumeSite
 {
     public partial class Constants
     {
