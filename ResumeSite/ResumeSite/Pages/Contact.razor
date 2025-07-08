@@ -1,0 +1,31 @@
+﻿@page "/contact"
+
+<PageTitle>Contact</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="4" Style="max-width:600px;margin:auto;">
+    <MudText Typo="Typo.h5" Class="mb-4">Contact Me</MudText>
+    <MudForm @ref="form" OnValidSubmit="Submit">
+        <MudTextField @bind-Value="name" Label="Name" For="() => name" Required="true" />
+        <MudTextField @bind-Value="email" Label="Email" For="() => email" Required="true" />
+        <MudTextField T="string" @bind-Value="message" Label="Message" For="() => message" Required="true" Lines="4" TextArea="true" />
+        <MudButton Type="Submit" Variant="Variant.Filled" Color="Color.Primary" Class="mt-4">Send</MudButton>
+    </MudForm>
+</MudPaper>
+
+@code {
+    private MudForm? form;
+    private string name = string.Empty;
+    private string email = string.Empty;
+    private string message = string.Empty;
+
+    [Inject]
+    private NavigationManager Nav { get; set; } = default!;
+
+    private void Submit()
+    {
+        var subject = Uri.EscapeDataString($"Contact from {name}");
+        var body = Uri.EscapeDataString($"From: {name} <{email}>%0D%0A%0D%0A{message}");
+        var mailto = $"mailto:{Constants.ContactEmail}?subject={subject}&body={body}";
+        Nav.NavigateTo(mailto, forceLoad: true);
+    }
+}
