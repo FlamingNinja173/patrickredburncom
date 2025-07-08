@@ -14,12 +14,15 @@
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="ToggleDrawer" />
         <MudText Typo="Typo.h6">@Constants.AppName</MudText>
         <MudSpacer />
-        <MudIcon Icon="_icon" />
-        <MudSwitch Class="ml-auto" T="bool" Color="Color.Inherit" Value="_isDarkMode" />
+        <MudSwitch Class="ml-auto" T="bool" Color="Color.Inherit" Value="_isDarkMode" ValueChanged="ToggleDarkMode" ThumbIcon="_icon" Label="Dark Mode" />
     </MudAppBar>
     <MudMainContent>
-        @Body
-        <Footer />
+        <MudContainer MaxWidth="MaxWidth.ExtraLarge">
+            <MudStack Spacing="2">
+                @Body
+                <Footer />
+            </MudStack>
+        </MudContainer>
     </MudMainContent>
 </MudLayout>
 
@@ -31,5 +34,10 @@
     private void ToggleDrawer()
     {
         _drawerOpen = !_drawerOpen;
+    }
+
+    private void ToggleDarkMode()
+    {
+        _isDarkMode = !_isDarkMode;
     }
 }

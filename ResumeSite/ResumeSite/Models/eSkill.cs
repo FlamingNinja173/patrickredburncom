@@ -1,4 +1,4 @@
-﻿using static ResumeSite.Constants.Constants;
+﻿using static ResumeSite.Constants;
 
 namespace ResumeSite.Models
 {

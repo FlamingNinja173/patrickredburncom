@@ -1,9 +1,5 @@
 ﻿<MudAppBar Bottom="true" Elevation="1" Dense="true">
     <MudText Typo="Typo.button">@(Constants.AppName + " - " + Constants.AppVersion)</MudText>
     <MudSpacer />
-    <MudText Typo="Typo.button">@Constants.AppAuthor, &copy; @Constants.AppYear Alteras Games</MudText>
-    <MudSpacer />
-    <MudScrollToTop Selector="#layout_scroll_section" Visible="false" TopOffset="100">
-        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowUpward" Color="Color.Success">Go to top</MudButton>
-    </MudScrollToTop>
+    <MudText Typo="Typo.button">@Constants.AppAuthor, &copy; @Constants.AppYear</MudText>
 </MudAppBar>
