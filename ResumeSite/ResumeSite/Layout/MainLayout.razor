@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider IsDarkMode="_isDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
@@ -12,15 +12,21 @@
 
     <MudAppBar Color="Color.Primary">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="ToggleDrawer" />
-        <MudText Typo="Typo.h6">ResumeSite</MudText>
+        <MudText Typo="Typo.h6">@Constants.AppName</MudText>
+        <MudSpacer />
+        <MudIcon Icon="_icon" />
+        <MudSwitch Class="ml-auto" T="bool" Color="Color.Inherit" Value="_isDarkMode" />
     </MudAppBar>
     <MudMainContent>
         @Body
+        <Footer />
     </MudMainContent>
 </MudLayout>
 
 @code {
     private bool _drawerOpen;
+    private bool _isDarkMode;
+    private string _icon => _isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode;
 
     private void ToggleDrawer()
     {
