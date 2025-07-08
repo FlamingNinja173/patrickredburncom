@@ -1,6 +1,6 @@
 ﻿namespace ResumeSite.Models
 {
-    public class Certification : eBase
+    public class eCertification : eBase
     {
         public string Name { get; set; } = string.Empty;
         public string Issuer { get; set; } = string.Empty;

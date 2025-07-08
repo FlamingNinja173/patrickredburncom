@@ -2,7 +2,7 @@
 
 namespace ResumeSite.Models
 {
-    public class Skill : eBase
+    public class eSkill : eBase
     {
         public string Name { get; set; } = string.Empty;
         public string? Description { get; set; }
