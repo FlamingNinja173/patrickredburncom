@@ -8,8 +8,8 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  blazorAppPath: '.'           # Root of your Blazor project
-  consoleAppPath: './Tools/ExportToJson'  # Path to SQLite ? JSON exporter
+  blazorAppPath: '$(System.DefaultWorkingDirectory)\ResumeSite\*.csproj'           # Root of your Blazor project
+  consoleAppPath: '$(System.DefaultWorkingDirectory)\ResumeSite.Export\*.csproj'  # Path to SQLite ? JSON exporter
   outputLocation: 'wwwroot'    # Static web app output folder
 
 steps:
