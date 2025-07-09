@@ -26,17 +26,17 @@ steps:
         command: 'restore'
         projects: '**/*.csproj'
     
-    - task: DotNetCoreCLI@2
-      displayName: 'Build SQLite => JSON Exporter'
-      inputs:
-        command: 'build'
-        projects: '$(consoleAppPath)'
+#    - task: DotNetCoreCLI@2
+#      displayName: 'Build SQLite => JSON Exporter'
+#      inputs:
+#        command: 'build'
+#        projects: '$(consoleAppPath)'
 
-    - task: DotNetCoreCLI@2
-      displayName: 'Run SQLite => JSON Exporter'
-      inputs:
-        command: 'build'
-        projects: '$(consoleAppPath)'
+#    - task: DotNetCoreCLI@2
+#      displayName: 'Run SQLite => JSON Exporter'
+#      inputs:
+#        command: 'build'
+#        projects: '$(consoleAppPath)'
 
     - task: DotNetCoreCLI@2
       displayName: 'Build Blazor WebAssembly App'
