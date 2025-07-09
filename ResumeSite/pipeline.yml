@@ -30,22 +30,23 @@ steps:
       displayName: 'Build SQLite => JSON Exporter'
       inputs:
         command: 'build'
-        arguments: '--project $(consoleAppPath)'
+        projects: '$(consoleAppPath)'
 
     - task: DotNetCoreCLI@2
       displayName: 'Run SQLite => JSON Exporter'
       inputs:
         command: 'build'
-        arguments: '--project $(consoleAppPath)'
+        projects: '$(consoleAppPath)'
 
     - task: DotNetCoreCLI@2
       displayName: 'Build Blazor WebAssembly App'
       inputs:
         command: 'build'
-        arguments: '--project $(blazorAppPath) --configuration $(buildConfiguration)'
+        projects: '$(blazorAppPath)'
+        arguments: '--configuration $(buildConfiguration)'
         
     - task: DotNetCoreCLI@2
-      displayName: 'publis Blazor WebAssembly App'
+      displayName: 'Publish Blazor WebAssembly App'
       inputs:
         command: 'publish'
         arguments: '--project $(blazorAppPath) -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app'
