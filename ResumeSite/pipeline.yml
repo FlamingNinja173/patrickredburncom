@@ -8,9 +8,9 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  blazorAppPath: '$(System.DefaultWorkingDirectory)/ResumeSite/ResumeSite.Web.csproj'           # Root of your Blazor project
-  consoleAppPath: '$(System.DefaultWorkingDirectory)/ResumeSite.Export/ResumeSite.Export.csproj'  # Path to SQLite ? JSON exporter
-  outputLocation: 'wwwroot'    # Static web app output folder
+  blazorAppPath: 'ResumeSite/ResumeSite/ResumeSite.Web.csproj'
+  consoleAppPath: 'ResumeSite/ResumeSite.Export/ResumeSite.Export.csproj'
+  outputLocation: 'wwwroot'
 
 steps:
 
