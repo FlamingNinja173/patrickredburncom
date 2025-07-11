@@ -14,8 +14,8 @@ variables:
       value: 'ResumeSite/ResumeSite.Web/ResumeSite.Web.csproj'
     - name: consoleAppPath
       value: 'ResumeSite/ResumeSite.Export/ResumeSite.Export.csproj'
-    - name: outputLocation
-      value: 'wwwroot'
+    - name: publishDirectory
+      value: 'build'
     - group: Deployment 
     - name: debug
       value: true
@@ -58,7 +58,7 @@ steps:
       inputs:
         command: 'publish'
         publishWebProjects: true
-        arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app'
+        arguments: '-c $(buildConfiguration) -o $(publishDirectory)'
         zipAfterPublish: false
         workingDirectory: '$(System.DefaultWorkingDirectory)'
         
@@ -70,8 +70,8 @@ steps:
       
     - task: AzureStaticWebApp@0
       inputs:
-        app_location: '$(Build.ArtifactStagingDirectory)/app'
-        output_location: 'ResumeSite.Web'
+        app_location: '$(publishDirectory)''
+        output_location: 'wwwroot'
         azure_static_web_apps_api_token: '$(AZURE_STATIC_WEB_APPS_API_TOKEN)'
         is_static_export: true
       displayName: 'Deploy to Azure Static Web App'
