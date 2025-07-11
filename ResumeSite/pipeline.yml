@@ -7,10 +7,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  buildConfiguration: 'Release'
-  blazorAppPath: 'ResumeSite/ResumeSite/ResumeSite.Web.csproj'
-  consoleAppPath: 'ResumeSite/ResumeSite.Export/ResumeSite.Export.csproj'
-  outputLocation: 'wwwroot'
+    # Define variables for the build configuration and project paths
+    - name: buildConfiguration
+      value: 'Release'
+    - name: blazorAppPath
+      value: 'ResumeSite/ResumeSite/ResumeSite.Web.csproj'
+    - name: consoleAppPath
+      value: 'ResumeSite/ResumeSite.Export/ResumeSite.Export.csproj'
+    - name: outputLocation
+      value: 'wwwroot'
+    - group: Deployment 
 
 steps:
 
