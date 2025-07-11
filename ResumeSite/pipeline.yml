@@ -17,6 +17,9 @@ variables:
     - name: outputLocation
       value: 'wwwroot'
     - group: Deployment 
+    - name: debug
+      type: boolean
+      value: true
 
 steps:
 
@@ -55,19 +58,18 @@ steps:
       displayName: 'Publish Blazor WebAssembly App'
       inputs:
         command: 'publish'
-        publishWebProjects: true
-        arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app'
-        zipAfterPublish: false
-
+        projects: '$(blazorAppPath)'
+        arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app/ResumeSite'
         
     - script: |
         echo "Listing contents of app directory:"
         ls -R $(Build.ArtifactStagingDirectory)/app
       displayName: 'List contents of publish output'
+      condition: eq(variables['debug'], 'true')
       
     - task: AzureStaticWebApp@0
       inputs:
-        app_location: '$(Build.ArtifactStagingDirectory)/app'
+        app_location: '$(Build.ArtifactStagingDirectory)/app/ResumeSite'
         output_location: 'wwwroot'
         azure_static_web_apps_api_token: '$(AZURE_STATIC_WEB_APPS_API_TOKEN)'
         is_static_export: true
