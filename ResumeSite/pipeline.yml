@@ -58,7 +58,7 @@ steps:
       inputs:
         command: 'publish'
         publishWebProjects: true
-        arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app/ResumeSite'
+        arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app'
         zipAfterPublish: false
         
     - script: |
