@@ -11,7 +11,7 @@ variables:
     - name: buildConfiguration
       value: 'Release'
     - name: blazorAppPath
-      value: 'ResumeSite/ResumeSite/ResumeSite.Web.csproj'
+      value: 'ResumeSite/ResumeSite.Web/ResumeSite.Web.csproj'
     - name: consoleAppPath
       value: 'ResumeSite/ResumeSite.Export/ResumeSite.Export.csproj'
     - name: outputLocation
