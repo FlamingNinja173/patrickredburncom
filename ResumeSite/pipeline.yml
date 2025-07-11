@@ -83,8 +83,7 @@ steps:
       
     - task: AzureStaticWebApp@0
       inputs:
-        app_location: '$(publishDirectory)/ResumeSite.Web'
-        output_location: 'wwwroot'
+        app_location: '$(publishDirectory)/ResumeSite.Web/wwwroot'
         is_static_export: true
         azure_static_web_apps_api_token: '$(AZURE_STATIC_WEB_APPS_API_TOKEN)'
       displayName: 'Deploy to Azure Static Web App'
