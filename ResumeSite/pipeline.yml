@@ -64,7 +64,7 @@ steps:
         
     - script: |
         echo "Listing contents of app directory:"
-        ls -R $(Build.ArtifactStagingDirectory)/app
+        ls -R $(publishDirectory)
       displayName: 'DEBUG: List contents of publish output'
       condition: eq(variables['debug'], 'true')
       
