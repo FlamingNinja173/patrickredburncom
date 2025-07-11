@@ -70,7 +70,7 @@ steps:
       
     - task: AzureStaticWebApp@0
       inputs:
-        app_location: '$(Build.ArtifactStagingDirectory)/app/ResumeSite.Web'
+        app_location: '$(Build.ArtifactStagingDirectory)/app'
         output_location: 'wwwroot'
         azure_static_web_apps_api_token: '$(AZURE_STATIC_WEB_APPS_API_TOKEN)'
         is_static_export: true
