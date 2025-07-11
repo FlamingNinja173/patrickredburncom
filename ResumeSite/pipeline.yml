@@ -60,6 +60,7 @@ steps:
         publishWebProjects: true
         arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app'
         zipAfterPublish: false
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
         
     - script: |
         echo "Listing contents of app directory:"
