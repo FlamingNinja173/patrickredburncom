@@ -64,12 +64,12 @@ steps:
     - script: |
         echo "Listing contents of app directory:"
         ls -R $(Build.ArtifactStagingDirectory)/app
-      displayName: 'List contents of publish output'
+      displayName: 'DEBUG: List contents of publish output'
       condition: eq(variables['debug'], 'true')
       
     - task: AzureStaticWebApp@0
       inputs:
-        app_location: '$(Build.ArtifactStagingDirectory)/app/ResumeSite'
+        app_location: '$(Build.ArtifactStagingDirectory)/app/ResumeSite.Web'
         output_location: 'wwwroot'
         azure_static_web_apps_api_token: '$(AZURE_STATIC_WEB_APPS_API_TOKEN)'
         is_static_export: true
