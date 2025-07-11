@@ -57,8 +57,10 @@ steps:
       displayName: 'Publish Blazor WebAssembly App'
       inputs:
         command: 'publish'
+        publishWebProjects: false
         projects: '$(blazorAppPath)'
         arguments: '-c $(buildConfiguration) -o $(publishDirectory)'
+        zipAfterPublish: false
         
     - script: |
         echo "Listing contents of app directory:"
