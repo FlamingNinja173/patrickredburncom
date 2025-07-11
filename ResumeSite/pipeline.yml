@@ -49,7 +49,9 @@ steps:
       displayName: 'Publish Blazor WebAssembly App'
       inputs:
         command: 'publish'
-        arguments: '--project $(blazorAppPath) -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app'
+        projects: '$(blazorAppPath)'
+        arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app'
+
 
     - task: AzureStaticWebApp@0
       inputs:
