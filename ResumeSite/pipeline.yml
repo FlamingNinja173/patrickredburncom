@@ -67,6 +67,13 @@ steps:
         ls -R $(publishDirectory)
       displayName: 'DEBUG: List contents of publish output'
       condition: eq(variables['debug'], 'true')
+
+    - script: |
+        echo "Checking publish output:"
+        find build -type f | grep index.html
+      displayName: 'DEBUG: Locate index.html'
+      condition: eq(variables['debug'], 'true')
+
       
     - task: AzureStaticWebApp@0
       inputs:
