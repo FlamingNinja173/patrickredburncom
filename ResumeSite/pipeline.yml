@@ -74,10 +74,16 @@ steps:
       displayName: 'DEBUG: Locate index.html'
       condition: eq(variables['debug'], 'true')
 
+    - script: |
+        echo "app_location contents:"
+        ls -l build/ResumeSite.Web/wwwroot
+      displayName: 'DEBUG: Show final publish folder'
+      condition: eq(variables['debug'], 'true')
+
       
     - task: AzureStaticWebApp@0
       inputs:
-        app_location: '$(publishDirectory)'
+        app_location: '$(publishDirectory)/ResumeSite.Web'
         output_location: 'wwwroot'
         is_static_export: true
         azure_static_web_apps_api_token: '$(AZURE_STATIC_WEB_APPS_API_TOKEN)'
