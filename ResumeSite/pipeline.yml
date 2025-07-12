@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - main
+      - /releases/production
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -18,7 +18,7 @@ variables:
       value: 'build'
     - group: Deployment 
     - name: debug
-      value: true
+      value: false  # Set to true for debugging purposes
 
 steps:
 
