@@ -24,7 +24,8 @@ namespace ResumeSite.Export
             {
                 Skills = GetSkills(conn),
                 Certifications = GetCertifications(conn),
-                WorkHistory = GetWorkHistory(conn)
+                WorkHistory = GetWorkHistory(conn),
+                Education = GetEducation(conn)
             };
 
             var options = new JsonSerializerOptions { WriteIndented = true };
@@ -57,7 +58,7 @@ namespace ResumeSite.Export
         private static List<eCertification> GetCertifications(SQLiteConnection conn)
         {
             var retVal = new List<eCertification>();
-            using var cmd = new SQLiteCommand("SELECT Id, Name, Issuer, DateEarned, Description FROM Certification", conn);
+            using var cmd = new SQLiteCommand("SELECT Id, Name, Issuer, DateEarned, Description, ImageUrl, CredentialUrl FROM Certification", conn);
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -67,7 +68,9 @@ namespace ResumeSite.Export
                     Name = reader.GetString(1),
                     Issuer = reader.GetString(2),
                     DateEarned = DateOnly.FromDateTime(reader.GetDateTime(3)),
-                    Description = reader.IsDBNull(4) ? null : reader.GetString(4)
+                    Description = reader.IsDBNull(4) ? null : reader.GetString(4),
+                    ImageUrl = reader.IsDBNull(5) ? null : reader.GetString(5),
+                    CredentialUrl = reader.IsDBNull(6) ? null : reader.GetString(6)
                 };
                 retVal.Add(cert);
             }
@@ -103,6 +106,27 @@ namespace ResumeSite.Export
                 {
                     work.Responsibilities.Add(readerResp.GetString(0));
                 }
+            }
+
+            return retVal;
+        }
+
+        private static List<eEducation> GetEducation(SQLiteConnection conn)
+        {
+            var retVal = new List<eEducation>();
+            using var cmd = new SQLiteCommand("SELECT Id, School, Degree, StartDate, EndDate FROM Education", conn);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                var edu = new eEducation
+                {
+                    Id = reader.GetInt32(0),
+                    School = reader.GetString(1),
+                    Degree = reader.GetString(2),
+                    StartDate = DateOnly.FromDateTime(reader.GetDateTime(3)),
+                    EndDate = reader.IsDBNull(4) ? (DateOnly?)null : DateOnly.FromDateTime(reader.GetDateTime(4))
+                };
+                retVal.Add(edu);
             }
 
             return retVal;
