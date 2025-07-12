@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using ResumeSite.Web.Services;
+using System.Net;
 using System.Text;
 
 namespace ResumeSite.Tests
@@ -11,7 +12,7 @@ namespace ResumeSite.Tests
             var json = "[{\"Name\":\"Test\",\"Issuer\":\"Issuer\",\"DateEarned\":\"2024-01-01\",\"ImageUrl\":\"url\",\"CredentialUrl\":\"cred\"}]";
             var handler = new FakeHandler(json);
             var http = new HttpClient(handler) { BaseAddress = new Uri("http://localhost") };
-            var service = new CertificationService(http);
+            ICertificationService service = new CertificationService(http);
 
             var result = await service.GetCertifications();
 

@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ResumeSite.Export\ResumeSite.Export.csproj" />
     <ProjectReference Include="..\ResumeSite.Model\ResumeSite.Model.csproj" />
+    <ProjectReference Include="..\ResumeSite.Web\ResumeSite.Web.csproj" />
     <ProjectReference Include="..\ResumeSite\ResumeSite.Web.csproj" />
   </ItemGroup>
 
