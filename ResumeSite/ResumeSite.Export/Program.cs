@@ -12,7 +12,7 @@
         static void Main(string[] args)
         {
             string dbPath = args.Length > 0 ? args[0] : "resume.db";
-            string outputPath = args.Length > 1 ? args[1] : Path.Combine("..", "ResumeSite", "wwwroot", "data", "resume.json");
+            string outputPath = args.Length > 1 ? args[1] : Path.Combine("..", "ResumeSite.Web", "wwwroot", "data", "data.json");
 
             Exporter.Export(dbPath, outputPath);
         }
