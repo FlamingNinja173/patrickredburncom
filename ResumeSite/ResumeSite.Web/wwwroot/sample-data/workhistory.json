@@ -1,0 +1,38 @@
+﻿[
+  {
+    "CompanyName": "SecureTech Solutions",
+    "JobTitle": "Cybersecurity Analyst",
+    "StartDate": "2023-01-01",
+    "EndDate": null,
+    "Description": "Analyzing security incidents and coordinating incident response efforts.",
+    "Responsibilities": [
+      "Monitored and responded to security events and alerts from SIEM tools.",
+      "Conducted vulnerability assessments and remediated identified risks.",
+      "Collaborated with IT teams to implement secure configurations and controls."
+    ]
+  },
+  {
+    "CompanyName": "NetDefend Systems",
+    "JobTitle": "Information Security Specialist",
+    "StartDate": "2020-06-01",
+    "EndDate": "2022-12-31",
+    "Description": "Led projects focused on improving network and endpoint security.",
+    "Responsibilities": [
+      "Developed and maintained information security policies and procedures.",
+      "Provided training and awareness programs on phishing and social engineering.",
+      "Worked with compliance teams to prepare for audits and meet regulatory requirements."
+    ]
+  },
+  {
+    "CompanyName": "DataCore Technologies",
+    "JobTitle": "IT Support Technician",
+    "StartDate": "2018-04-01",
+    "EndDate": "2020-05-31",
+    "Description": "Supported day-to-day IT operations and assisted in infrastructure upgrades.",
+    "Responsibilities": [
+      "Troubleshot hardware and software issues across multiple departments.",
+      "Maintained user accounts and permissions in Active Directory.",
+      "Assisted in network configuration and security patching."
+    ]
+  }
+]

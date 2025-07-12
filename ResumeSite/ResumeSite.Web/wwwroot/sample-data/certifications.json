@@ -1,0 +1,20 @@
+﻿[
+  {
+    "Name": "CompTIA A+",
+    "Issuer": "CompTIA",
+    "DateEarned": "2020-05-01",
+    "Description": "Entry-level certification covering IT fundamentals, including hardware, software, networking, and troubleshooting."
+  },
+  {
+    "Name": "CompTIA Security+",
+    "Issuer": "CompTIA",
+    "DateEarned": "2021-03-15",
+    "Description": "Focuses on foundational cybersecurity skills and best practices for securing networks, systems, and data."
+  },
+  {
+    "Name": "CompTIA CySA+",
+    "Issuer": "CompTIA",
+    "DateEarned": "2022-08-10",
+    "Description": "Covers behavioral analytics to identify and combat cybersecurity threats using threat detection tools and techniques."
+  }
+]
