@@ -1,0 +1,15 @@
+﻿@inherits SkillsComponentCode
+
+<MudText Typo="Typo.h5" Class="mb-4">Skills</MudText>
+<MudGrid GutterSize="3">
+    @foreach (var skill in skills)
+    {
+        <MudItem xs="12" sm="6" md="4" lg="3">
+            <MudText Typo="Typo.subtitle1">@skill.Name</MudText>
+            @if (!string.IsNullOrWhiteSpace(skill.Description))
+            {
+                <MudText Typo="Typo.caption">@skill.Description</MudText>
+            }
+        </MudItem>
+    }
+</MudGrid>

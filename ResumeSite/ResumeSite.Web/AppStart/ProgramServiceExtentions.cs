@@ -8,6 +8,8 @@ namespace ResumeSite.Web.AppStart
         {
             services.AddScoped<ICertificationService, CertificationService>();
             services.AddScoped<IWorkHistoryService, WorkHistoryService>();
+            services.AddScoped<IEducationService, EducationService>();
+            services.AddScoped<ISkillService, SkillService>();
         }
     }
 }

@@ -1,0 +1,16 @@
+﻿@inherits EducationComponentCode
+
+<MudText Typo="Typo.h5" Class="mb-4">Education</MudText>
+@for (var i = 0; i < educationList.Count; i++)
+{
+    var edu = educationList[i];
+    <MudText Typo="Typo.h6">@edu.School</MudText>
+    <MudText Typo="Typo.subtitle2">@edu.Degree</MudText>
+    <MudText Typo="Typo.caption">
+        @edu.StartDate.ToString("MMM yyyy") - @(edu.EndDate?.ToString("MMM yyyy") ?? "Present")
+    </MudText>
+    @if (i < educationList.Count - 1)
+    {
+        <MudDivider Class="my-2" />
+    }
+}
