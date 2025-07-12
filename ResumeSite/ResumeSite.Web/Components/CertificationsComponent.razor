@@ -1,0 +1,32 @@
+﻿@inherits CertificationComponentCode
+
+
+<MudText Typo="Typo.h5" Class="mb-4">Certifications</MudText>
+<MudGrid>
+    @foreach (var cert in certifications)
+    {
+        <MudItem xs="12" sm="6" md="4" lg="3">
+            <MudCard>
+                @if (!string.IsNullOrWhiteSpace(cert.ImageUrl))
+                {
+                    <MudCardMedia Image="@cert.ImageUrl" Height="140" />
+                }
+                <MudCardContent>
+                    <MudText Typo="Typo.subtitle1">@cert.Name</MudText>
+                    <MudText Typo="Typo.caption">@cert.Issuer</MudText>
+                    <MudText Typo="Typo.caption">@cert.DateEarned.ToString("MMMM yyyy")</MudText>
+                    @if (!string.IsNullOrWhiteSpace(cert.Description))
+                    {
+                        <MudText Typo="Typo.body2">@cert.Description</MudText>
+                    }
+                </MudCardContent>
+                @if (!string.IsNullOrWhiteSpace(cert.CredentialUrl))
+                {
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" Href="@cert.CredentialUrl" Target="_blank">View Credential</MudButton>
+                    </MudCardActions>
+                }
+            </MudCard>
+        </MudItem>
+    }
+</MudGrid>
