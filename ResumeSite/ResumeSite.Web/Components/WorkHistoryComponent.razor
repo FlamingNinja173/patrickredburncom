@@ -1,0 +1,29 @@
+﻿@inherits WorkHistoryCode
+
+<MudText Typo="Typo.h5" Class="mb-4">Work History</MudText>
+<MudGrid GutterSize="3">
+        @foreach (var item in workHistory)
+        {
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard Class="ma-2">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6">@item.CompanyName</MudText>
+                        <MudText Typo="Typo.subtitle2">@item.JobTitle</MudText>
+                        <MudText Typo="Typo.caption">
+                            @item.StartDate.ToString("MMM yyyy") - @(item.EndDate?.ToString("MMM yyyy") ?? "Present")
+                        </MudText>
+                        @if (!string.IsNullOrWhiteSpace(item.Description))
+                        {
+                            <MudText Class="mt-2">@item.Description</MudText>
+                        }
+                        <MudList T="eWorkHistory" Dense="true" Class="mt-2">
+                            @foreach (var resp in item.Responsibilities)
+                            {
+                                <MudListItem>@resp</MudListItem>
+                            }
+                        </MudList>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
