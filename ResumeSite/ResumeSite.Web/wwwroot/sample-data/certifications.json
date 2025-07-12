@@ -3,18 +3,24 @@
     "Name": "CompTIA A+",
     "Issuer": "CompTIA",
     "DateEarned": "2020-05-01",
-    "Description": "Entry-level certification covering IT fundamentals, including hardware, software, networking, and troubleshooting."
+    "Description": "Entry-level certification covering IT fundamentals, including hardware, software, networking, and troubleshooting.",
+    "ImageUrl": "https://via.placeholder.com/150?text=A%2B",
+    "CredentialUrl": "https://example.com/comptia-a-plus"
   },
   {
     "Name": "CompTIA Security+",
     "Issuer": "CompTIA",
     "DateEarned": "2021-03-15",
-    "Description": "Focuses on foundational cybersecurity skills and best practices for securing networks, systems, and data."
+    "Description": "Focuses on foundational cybersecurity skills and best practices for securing networks, systems, and data.",
+    "ImageUrl": "https://via.placeholder.com/150?text=Sec%2B",
+    "CredentialUrl": "https://example.com/comptia-security-plus"
   },
   {
     "Name": "CompTIA CySA+",
     "Issuer": "CompTIA",
     "DateEarned": "2022-08-10",
-    "Description": "Covers behavioral analytics to identify and combat cybersecurity threats using threat detection tools and techniques."
+    "Description": "Covers behavioral analytics to identify and combat cybersecurity threats using threat detection tools and techniques.",
+    "ImageUrl": "https://via.placeholder.com/150?text=CySA%2B",
+    "CredentialUrl": "https://example.com/comptia-cysa-plus"
   }
 ]
